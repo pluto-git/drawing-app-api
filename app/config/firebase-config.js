@@ -1,8 +1,6 @@
 require('dotenv').config();
 const admin = require("firebase-admin");
 
-const serviceAccount = require("../../ServiceAccount.json");
-
 admin.initializeApp({
     credential: admin.credential.cert({
         "type": process.env.type,
@@ -19,12 +17,3 @@ admin.initializeApp({
 });
 
 module.exports = admin;
-
-// const admin = require("firebase-admin");
-// const serviceAccount = require("../../ServiceAccount.json");
-
-// admin.initializeApp({
-//     credential: admin.credential.cert(serviceAccount)
-// });
-
-// module.exports = admin;
